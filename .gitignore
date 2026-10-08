@@ -1,0 +1,17 @@
+# Gradle / Kotlin
+.gradle/
+build/
+.kotlin/
+!gradle/wrapper/gradle-wrapper.jar
+
+# SGJP dictionary, downloaded by `./gradlew downloadDictionary`
+data/
+
+# IDE and OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Local tooling
+.claude/

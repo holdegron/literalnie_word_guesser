@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: literalnie
+  mvc:
+    problemdetails:
+      enabled: true
+  threads:
+    virtual:
+      enabled: true
+
+literalnie:
+  dictionary:
+    path: data/sgjp.tab.gz

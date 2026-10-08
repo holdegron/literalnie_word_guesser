@@ -1,0 +1,57 @@
+#!DICT-ID pl.sgjp.sgjp-2025.08.18
+#<COPYRIGHT>
+Copyright © 2007–2025 Marcin Woliński, Zbigniew Bronk, Włodzimierz Gruszczyński, Witold Kieraś, Zygmunt Saloni, Danuta Skowrońska, Robert Wołosz
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY COPYRIGHT HOLDERS “AS IS” AND ANY EXPRESS
+OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+THE POSSIBILITY OF SUCH DAMAGE.
+#</COPYRIGHT>
+Kraków	Kraków	subst:sg:nom.acc:m3	nazwa_geograficzna	
+abcug	abcug	subst:sg:nom.acc:m3	nazwa_pospolita	daw.
+absyd	absyd	subst:sg:nom.acc:m3	nazwa_pospolita	daw.
+bawić	bawić	inf:imperf		
+drzwi	drzwi	subst:pl:gen:n:pt	nazwa_pospolita	
+drzwi	drzwi	subst:pl:nom.acc.voc:n:pt	nazwa_pospolita	
+e-mail	e-mail	subst:sg:nom.acc:m3	nazwa_pospolita	
+e-mail	e-mail	subst:sg:nom:m2	nazwa_pospolita	pot.
+kasza	kasza	subst:sg:nom:f	nazwa_pospolita	
+kawka	kawka	subst:sg:nom:f	nazwa_pospolita	
+kotem	kot:Sm2	subst:sg:inst:m2	nazwa_pospolita	
+kotem	kot:Sm1	subst:sg:inst:m1	nazwa_pospolita	pot.,środ.
+kotek	kotek	subst:sg:nom:m2	nazwa_pospolita	
+kotki	kotek	subst:pl:nom.acc.voc:m2	nazwa_pospolita	
+kotka	kotka	subst:sg:nom:f	nazwa_pospolita	
+kotki	kotka	subst:pl:nom.acc.voc:f	nazwa_pospolita	
+kotki	kotka	subst:sg:gen:f	nazwa_pospolita	
+lalka	lalka	subst:sg:nom:f	nazwa_pospolita	
+mamut	mamut	subst:sg:nom:m2	nazwa_pospolita	paleont.
+palma	palma	subst:sg:nom:f	nazwa_pospolita	bot.
+piec	piec:V	inf:imperf		
+piec	piec:S	subst:sg:nom.acc:m3	nazwa_pospolita	
+sokół	sokół:Sm2	subst:sg:nom:m2	nazwa_pospolita	zool.
+sokół	sokół:Sm1	subst:sg:nom:m1	nazwa_pospolita	
+słowo	słowo	subst:sg:nom.acc.voc:n:ncol	nazwa_pospolita	
+zamek	zamek:Sm3~a	subst:sg:nom.acc:m3	nazwa_pospolita	
+zamek	zamek:Sm3~u	subst:sg:nom.acc:m3	nazwa_pospolita	
+ładny	ładny	adj:sg:acc:m3:pos		
+ładny	ładny	adj:sg:nom.voc:m1.m2.m3:pos		
