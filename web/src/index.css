@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 
-/* A Polish squared school notebook ("zeszyt w kratkę"): blue grid, red margin, fountain-pen ink. */
 :root {
   color-scheme: light dark;
   --paper: #fbfcfe;

@@ -14,7 +14,6 @@ data class DictionaryProperties(val path: Path)
 @Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(DictionaryProperties::class)
 class DictionaryConfiguration {
-
     private val log = LoggerFactory.getLogger(javaClass)
 
     @Bean

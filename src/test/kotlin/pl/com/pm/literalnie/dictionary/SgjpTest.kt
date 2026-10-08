@@ -10,7 +10,6 @@ import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class SgjpTest {
-
     private val dictionary = loadDictionary(Path.of("src/test/resources/sgjp-sample.tab"))
     private val words = (2..10).flatMap(dictionary::wordsOfLength).associateBy(Word::text)
 

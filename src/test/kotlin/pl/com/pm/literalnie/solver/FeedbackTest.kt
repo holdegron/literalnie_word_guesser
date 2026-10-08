@@ -8,7 +8,6 @@ import pl.com.pm.literalnie.solver.Mark.PRESENT
 import kotlin.test.assertEquals
 
 class FeedbackTest {
-
     @Test
     fun `marks every letter green when the guess is the answer`() {
         assertEquals(List(5) { CORRECT }, feedback("kotek", "kotek"))

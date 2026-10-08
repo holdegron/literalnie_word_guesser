@@ -8,7 +8,6 @@ import kotlin.io.path.isRegularFile
 import kotlin.io.path.name
 
 class Dictionary(words: Collection<Word>) {
-
     private val wordsByLength: Map<Int, List<Word>> = words.groupBy { it.text.length }
 
     val size: Int = words.size
@@ -16,7 +15,6 @@ class Dictionary(words: Collection<Word>) {
     fun wordsOfLength(length: Int): List<Word> = wordsByLength[length].orEmpty()
 }
 
-/** Loads a plain `.tab` or gzipped `.tab.gz` SGJP dump. */
 fun loadDictionary(path: Path): Dictionary {
     check(path.isRegularFile()) {
         "SGJP dictionary not found at '${path.toAbsolutePath()}'. Run `./gradlew downloadDictionary` first."

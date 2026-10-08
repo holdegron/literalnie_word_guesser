@@ -10,10 +10,6 @@ interface Settled {
   result: SolverResult
 }
 
-/**
- * Asks the backend for candidates whenever the request changes. Fast clicking on tiles is debounced
- * and stale requests are aborted; the last result stays visible while a new one is `pending`.
- */
 export const useSolver = (request: SolveRequest): { result: SolverResult | null; pending: boolean } => {
   const key = JSON.stringify(request)
   const [settled, setSettled] = useState<Settled | null>(null)

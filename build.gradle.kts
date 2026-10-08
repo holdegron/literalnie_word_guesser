@@ -63,7 +63,6 @@ tasks.bootRun {
     dependsOn(downloadDictionary)
 }
 
-// Bundles the frontend into the jar when it has been built (`npm --prefix web run build`).
 tasks.processResources {
     from("web/dist") {
         into("static")

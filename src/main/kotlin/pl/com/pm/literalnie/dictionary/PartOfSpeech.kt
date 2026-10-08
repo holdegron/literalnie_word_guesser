@@ -17,7 +17,6 @@ enum class PartOfSpeech(private val sgjpTags: Set<String>) {
         private val byTag: Map<String, PartOfSpeech> =
             entries.flatMap { pos -> pos.sgjpTags.map { it to pos } }.toMap()
 
-        /** Maps a full SGJP tag such as `subst:sg:nom:m3` to its part of speech. */
         fun fromSgjpTag(tag: String): PartOfSpeech = byTag[tag.substringBefore(':')] ?: OTHER
     }
 }

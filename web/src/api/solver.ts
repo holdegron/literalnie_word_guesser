@@ -1,4 +1,5 @@
 import type { Guess } from '../game/board.ts'
+import type { LettersRequest } from '../game/letters.ts'
 
 export type PartOfSpeech =
   | 'NOUN'
@@ -23,15 +24,13 @@ export interface Word {
 export interface SolveRequest {
   length: number
   guesses: readonly Guess[]
+  letters?: LettersRequest
   limit: number
 }
 
 export interface SolveResponse {
-  /** Number of words that still fit. */
   total: number
-  /** Candidates before the first guess and after each following one. */
   funnel: number[]
-  /** Best next guesses first, at most `limit` of them. */
   words: Word[]
 }
 

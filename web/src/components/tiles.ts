@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import type { Mark } from '../game/board.ts'
 
 export const MARK_STYLE: Record<Mark, string> = {
@@ -11,3 +12,9 @@ export const MARK_NAME: Record<Mark, string> = {
   PRESENT: 'żółta',
   CORRECT: 'zielona',
 }
+
+export const tileBase =
+  'size-(--tile) text-[length:calc(var(--tile)*0.5)] grid place-items-center rounded-md border-2 font-bold uppercase select-none'
+
+export const tileSizeFor = (length: number): CSSProperties =>
+  ({ '--tile': `min(3.5rem, calc((100vw - 7.5rem - ${length - 1} * 0.375rem) / ${length}))` }) as CSSProperties

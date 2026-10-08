@@ -39,7 +39,6 @@ export const isComplete = (board: Board, row: Row): boolean => row.length === bo
 
 export const completeRows = (board: Board): Row[] => board.rows.filter((row) => isComplete(board, row))
 
-/** Index of the row that typing goes into, or null when all rows are filled. */
 export const activeRowIndex = (board: Board): number | null => {
   const last = board.rows.at(-1)
   if (last && !isComplete(board, last)) return board.rows.length - 1
@@ -52,7 +51,6 @@ export const toGuesses = (board: Board): Guess[] =>
     marks: row.map((tile) => tile.mark),
   }))
 
-/** Best colour each letter has earned so far, as shown on the game keyboard. */
 export const letterMarks = (board: Board): ReadonlyMap<string, Mark> =>
   completeRows(board)
     .flat()
@@ -61,7 +59,6 @@ export const letterMarks = (board: Board): ReadonlyMap<string, Mark> =>
       return known && MARK_RANK[known] >= MARK_RANK[mark] ? marks : new Map(marks).set(letter, mark)
     }, new Map<string, Mark>())
 
-/** A letter that was already green in this position will be green again, so it is pre-coloured. */
 const newTile = (board: Board, letter: string, column: number): Tile => ({
   letter,
   mark: completeRows(board).some((row) => row[column]?.letter === letter && row[column]?.mark === 'CORRECT')

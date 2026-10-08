@@ -1,12 +1,5 @@
 package pl.com.pm.literalnie.dictionary
 
-/**
- * Parsing of the SGJP tab dump (https://download.sgjp.pl/morfeusz/).
- *
- * Every data line has the columns: form, lemma, tag, name category, qualifiers, e.g.
- * `kotem	kot:Sm1	subst:sg:inst:m2	nazwa_pospolita	`. The lemma may carry a homonym
- * suffix after a colon. The file starts with a license header that has no tab-separated columns.
- */
 internal data class SgjpEntry(
     val form: String,
     val lemma: String,
@@ -29,7 +22,6 @@ internal fun parseSgjpLine(line: String): SgjpEntry? =
             )
         }
 
-/** Base forms written in lowercase Polish letters only: no proper names, acronyms or multi-word entries. */
 internal val SgjpEntry.isGuessable: Boolean
     get() = form == lemma && isPolishWord(form)
 

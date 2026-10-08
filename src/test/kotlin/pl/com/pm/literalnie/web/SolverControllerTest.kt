@@ -12,7 +12,6 @@ import org.springframework.test.web.servlet.assertj.MockMvcTester
 @SpringBootTest(properties = ["literalnie.dictionary.path=src/test/resources/sgjp-sample.tab"])
 @AutoConfigureMockMvc
 class SolverControllerTest(@Autowired private val mvc: MockMvcTester) {
-
     private fun solve(body: String) =
         mvc.post().uri("/api/solve").contentType(MediaType.APPLICATION_JSON).content(body)
 
@@ -34,6 +33,22 @@ class SolverControllerTest(@Autowired private val mvc: MockMvcTester) {
         assertThat(response).bodyJson().extractingPath("$.funnel").isEqualTo(listOf(15, 1))
         assertThat(response).bodyJson().extractingPath("$.words[0].text").isEqualTo("kotka")
         assertThat(response).bodyJson().extractingPath("$.words[0].partsOfSpeech").isEqualTo(listOf("NOUN"))
+    }
+
+    @Test
+    fun `accepts letters marked by hand`() {
+        val response = solve(
+            """
+            {
+              "length": 5,
+              "letters": { "correct": { "4": "A" }, "present": { "o": [0] }, "absent": ["l"] }
+            }
+            """,
+        )
+
+        assertThat(response).hasStatusOk()
+        assertThat(response).bodyJson().extractingPath("$.funnel").isEqualTo(listOf(15, 1))
+        assertThat(response).bodyJson().extractingPath("$.words[0].text").isEqualTo("kotka")
     }
 
     @Test
