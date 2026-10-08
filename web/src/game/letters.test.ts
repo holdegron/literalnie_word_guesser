@@ -34,6 +34,13 @@ describe('lettersReducer', () => {
     expect(letters.present).toEqual({ o: [1] })
   })
 
+  it('never rules out every position of a yellow letter', () => {
+    const toggles = [0, 1, 2, 3, 4].map((position): LettersAction => ({ type: 'toggleNotAt', letter: 'b', position }))
+    const letters = apply(emptyLetters(5), cycle('b'), cycle('b'), ...toggles)
+
+    expect(letters.present).toEqual({ b: [0, 1, 2, 3] })
+  })
+
   it('starts over when the length changes', () => {
     expect(apply(emptyLetters(5), cycle('x'), { type: 'resize', length: 6 })).toEqual(emptyLetters(6))
   })

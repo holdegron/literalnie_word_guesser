@@ -1,6 +1,6 @@
 import { type Dispatch, type KeyboardEvent, useMemo, useRef } from 'react'
 import { isLetter } from '../game/alphabet.ts'
-import { type Letters, type LettersAction, lettersMarks } from '../game/letters.ts'
+import { canToggleNotAt, type Letters, type LettersAction, lettersMarks } from '../game/letters.ts'
 import { Keyboard } from './Keyboard.tsx'
 import { MARK_STYLE, tileBase, tileSizeFor } from './tiles.ts'
 
@@ -95,14 +95,17 @@ export const LettersPanel = ({ letters, dispatch }: Props) => {
                 <span className="w-8 shrink-0 text-xl font-bold uppercase">{letter}</span>
                 {positions.map((position) => {
                   const notHere = letters.present[letter]?.includes(position) ?? false
+                  const lastPlaceLeft = !canToggleNotAt(letters, letter, position)
                   return (
                     <button
                       key={position}
                       type="button"
+                      disabled={lastPlaceLeft}
+                      title={lastPlaceLeft ? 'To ostatnie miejsce, na którym ta litera może stać' : undefined}
                       aria-pressed={notHere}
                       aria-label={`${letter.toUpperCase()} nie stoi na pozycji ${position + 1}`}
                       onClick={() => dispatch({ type: 'toggleNotAt', letter, position })}
-                      className={`${tileBase} focus-visible:outline-ink cursor-pointer transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 ${
+                      className={`${tileBase} focus-visible:outline-ink cursor-pointer transition-colors focus-visible:outline-3 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-40 ${
                         notHere ? MARK_STYLE.PRESENT : 'border-ink/20 bg-paper'
                       }`}
                     >

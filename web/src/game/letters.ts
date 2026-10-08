@@ -53,8 +53,14 @@ const place = (letters: Letters, position: number, letter: string): Letters => (
   absent: letters.absent.filter((l) => l !== letter),
 })
 
+export const canToggleNotAt = (letters: Letters, letter: string, position: number): boolean => {
+  const notAt = letters.present[letter] ?? []
+  return notAt.includes(position) || notAt.length < letters.length - 1
+}
+
 const toggleNotAt = (letters: Letters, letter: string, position: number): Letters => {
   const notAt = letters.present[letter] ?? []
+  if (!canToggleNotAt(letters, letter, position)) return letters
   return {
     ...letters,
     present: {
